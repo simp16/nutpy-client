@@ -6,7 +6,7 @@ This project provides a simple way to shutdown a device based on the information
     ```
     git clone https://github.com/simp16/nutpy-client.git
     ```
-2. Go in to the simple-nut-client folder and modify the configuration file according to your needs:
+2. Go in to the nutpy-client folder and modify the configuration file according to your needs:
    ```                                       
     [UPS]
     NUT_HOST = 192.168.1.1 # nut server host
