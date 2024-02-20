@@ -4,7 +4,7 @@ This project provides a simple way to shutdown a device based on the information
 ## Installation
 1. Clone this repository
     ```
-    git clone https://github.com/simp16/simple-nut-client.git
+    git clone https://github.com/simp16/nutpy-client.git
     ```
 2. Go in to the simple-nut-client folder and modify the configuration file according to your needs:
    ```                                       
