@@ -1,0 +1,43 @@
+#!/bin/bash
+apt install pip
+pip install nut2
+# Get the directory of the script
+script_dir="$(dirname "$0")"
+cd "$script_dir"
+
+nut_client_name="nutpy-client.py"
+nut_config_name="client.conf"
+
+# Set the path to the nutpy-client directory
+nutpy_client_dir="/etc/nutpy-client"
+
+# Create the directory if it doesn't exist
+if [ ! -d "/etc/nutpy-client" ]; then
+    mkdir /etc/nutpy-client
+fi
+
+cp "$nut_client_name" "$nutpy_client_dir"
+cp "$nut_config_name" "$nutpy_client_dir"
+
+# Create the .service file
+cat <<EOF > /etc/systemd/system/nutpy-client.service
+[Unit]
+Description=Python NUT Client
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /etc/nutpy-client/nutpy-client.py &
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Reload the systemd daemon
+systemctl daemon-reload
+
+# Enable the service to start at boot time
+systemctl enable nutpy-client.service
+
+# Start the service
+systemctl start nutpy-client.service

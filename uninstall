@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Stop the nutpy-client service
+systemctl stop nutpy-client.service
+
+# Disable the nutpy-client service
+systemctl disable nutpy-client.service
+
+# Remove the nutpy-client service file
+rm /etc/systemd/system/nutpy-client.service
+
+# Remove the nutpy-client directory and its contents
+rm -rf /etc/nutpy-client
+
+# Uninstall the nut2 package
+pip uninstall -y nut2
