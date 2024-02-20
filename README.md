@@ -16,8 +16,9 @@ This project provides a simple way to shutdown a device based on the information
     SHUTDOWN_TIME = 600 # shutdown 600 seconds after power loss
     SHUTDOWN_PERCENTAGE = 20 # shutdown after ups battery drops below 20% 
    ```   
-3.  After configuration run the installation script with:
+3.  Add execute permission to scripts run the installation with:
     ```
+    sudo chmod +x install uninstall
     sudo ./install
     ```
 4. Check if the service is running with:
