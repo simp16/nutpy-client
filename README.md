@@ -29,3 +29,8 @@ You can change the configuration in /etc/nutpy-client/client.conf or by rerunnin
 ```
 sudo systemctl restart nutpy-client.service
 ```
+## Removing the nutpy-client
+Uninstall the client with this code:
+```
+sudo ./uninstall
+```
